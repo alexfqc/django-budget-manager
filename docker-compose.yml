@@ -24,23 +24,23 @@ services:
   redis:
     image: redis:7
 
-  # celery:
-  #   build: .
-  #   command: celery -A app worker --loglevel=info
-  #   volumes:
-  #     - .:/code
-  #   depends_on:
-  #     - redis
-  #     - web
+  celery:
+    build: .
+    command: celery -A app worker --loglevel=info
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+      - web
 
-  # celery-beat:
-  #   build: .
-  #   command: celery -A app beat --loglevel=info
-  #   volumes:
-  #     - .:/code
-  #   depends_on:
-  #     - redis
-  #     - web
+  celery-beat:
+    build: .
+    command: celery -A app beat --loglevel=info
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+      - web
 
 volumes:
   pgdata:

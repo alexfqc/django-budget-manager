@@ -1,0 +1,39 @@
+[MASTER]
+ignore=migrations,venv,settings.py
+load-plugins=pylint_django
+extension-pkg-whitelist=psycopg2
+django-settings-module=app.settings
+
+[MESSAGES CONTROL]
+disable=
+    missing-docstring,
+    invalid-name,
+    no-member,
+    too-few-public-methods,
+    too-many-arguments,
+    too-many-locals,
+    too-many-instance-attributes,
+    unused-argument,
+    redefined-builtin,
+    duplicate-code,
+    line-too-long,
+    import-error
+
+[FORMAT]
+max-line-length=120
+
+[DESIGN]
+max-args=7
+max-locals=20
+max-attributes=10
+max-branches=12
+max-statements=50
+
+[TYPECHECK]
+ignored-classes=Settings
+generated-members=requests.*,object.DoesNotExist,object.MultipleObjectsReturned
+
+[REPORTS]
+output-format=colorized
+reports=no
+score=yes
