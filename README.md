@@ -1,6 +1,6 @@
 # Django Budget Manager
 
-A fullstack campaign management system with daily and monthly budget control. This project uses Django and Celery to automatically activate or deactivate campaigns based on ad spend and allowed schedule (dayparting). Everything runs inside Docker — no need to install Python locally.
+A campaign management system with daily and monthly budget control. This project uses Django and Celery to automatically activate or deactivate campaigns based on ad spend and allowed schedule (dayparting). Everything runs inside Docker — no need to install Python locally.
 
 ## 🧱 Tech Stack
 
@@ -23,4 +23,16 @@ Clone the repository and start the containers:
 
 ```bash
 docker compose up --build
+```
+
+Open a new tab an run migrations:
+
+```bash
+docker compose exec web python manage.py migrate
+```
+
+Create fake data:
+
+```bash
+docker compose exec web python manage.py seed_test_data
 ```
