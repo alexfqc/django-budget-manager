@@ -14,4 +14,8 @@ app.conf.beat_schedule = {
         "task": "ads.tasks.budget_reset.reset_campaign_budgets",
         "schedule": crontab(minute="*"),  
     },
+    "enforce-dayparting-every-minute": {
+        "task": "ads.tasks.dayparting.enforce_dayparting_rules",
+        "schedule": crontab(minute="*"),
+    },
 }
