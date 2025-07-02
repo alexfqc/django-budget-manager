@@ -29,6 +29,6 @@ def track_ad_spend() -> None:
         else:
             updated_count += 1
 
-        print(f"[{campaign.name}] Gasto do dia: R${amount_spent}")
+        print(f"[{campaign.name}] Daily spend: ${amount_spent:.2f}")
 
-    print(f"✅ {created_count} registros criados, {updated_count} atualizados.")
+    print(f"✅ {created_count} records created, {updated_count} updated.")
